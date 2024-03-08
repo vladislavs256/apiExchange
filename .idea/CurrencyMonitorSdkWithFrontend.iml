@@ -4,8 +4,6 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/api/src" isTestSource="false" packagePrefix="App\" />
       <sourceFolder url="file://$MODULE_DIR$/api/tests" isTestSource="true" packagePrefix="App\Tests\" />
-      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/api/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/api/vendor/guzzlehttp/guzzle" />
       <excludeFolder url="file://$MODULE_DIR$/api/vendor/guzzlehttp/promises" />
@@ -79,6 +77,29 @@
       <excludeFolder url="file://$MODULE_DIR$/api/vendor/symfony/serializer" />
       <excludeFolder url="file://$MODULE_DIR$/api/vendor/symfony/stopwatch" />
       <excludeFolder url="file://$MODULE_DIR$/api/vendor/webmozart/assert" />
+      <excludeFolder url="file://$MODULE_DIR$/api/tools/php-cs-fixer/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/api/tools/php-cs-fixer/vendor/friendsofphp/php-cs-fixer" />
+      <excludeFolder url="file://$MODULE_DIR$/api/tools/php-cs-fixer/vendor/psr/container" />
+      <excludeFolder url="file://$MODULE_DIR$/api/tools/php-cs-fixer/vendor/psr/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/api/tools/php-cs-fixer/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/api/tools/php-cs-fixer/vendor/sebastian/diff" />
+      <excludeFolder url="file://$MODULE_DIR$/api/tools/php-cs-fixer/vendor/symfony/console" />
+      <excludeFolder url="file://$MODULE_DIR$/api/tools/php-cs-fixer/vendor/symfony/deprecation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/api/tools/php-cs-fixer/vendor/symfony/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/api/tools/php-cs-fixer/vendor/symfony/event-dispatcher-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/api/tools/php-cs-fixer/vendor/symfony/filesystem" />
+      <excludeFolder url="file://$MODULE_DIR$/api/tools/php-cs-fixer/vendor/symfony/finder" />
+      <excludeFolder url="file://$MODULE_DIR$/api/tools/php-cs-fixer/vendor/symfony/options-resolver" />
+      <excludeFolder url="file://$MODULE_DIR$/api/tools/php-cs-fixer/vendor/symfony/polyfill-ctype" />
+      <excludeFolder url="file://$MODULE_DIR$/api/tools/php-cs-fixer/vendor/symfony/polyfill-intl-grapheme" />
+      <excludeFolder url="file://$MODULE_DIR$/api/tools/php-cs-fixer/vendor/symfony/polyfill-intl-normalizer" />
+      <excludeFolder url="file://$MODULE_DIR$/api/tools/php-cs-fixer/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/api/tools/php-cs-fixer/vendor/symfony/polyfill-php80" />
+      <excludeFolder url="file://$MODULE_DIR$/api/tools/php-cs-fixer/vendor/symfony/polyfill-php81" />
+      <excludeFolder url="file://$MODULE_DIR$/api/tools/php-cs-fixer/vendor/symfony/process" />
+      <excludeFolder url="file://$MODULE_DIR$/api/tools/php-cs-fixer/vendor/symfony/service-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/api/tools/php-cs-fixer/vendor/symfony/stopwatch" />
+      <excludeFolder url="file://$MODULE_DIR$/api/tools/php-cs-fixer/vendor/symfony/string" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

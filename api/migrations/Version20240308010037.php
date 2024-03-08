@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20240307202606 extends AbstractMigration
+final class Version20240308010037 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -20,10 +20,8 @@ final class Version20240307202606 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('DROP SEQUENCE currency_exchange_rates_id_seq CASCADE');
         $this->addSql('CREATE SEQUENCE rate_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
         $this->addSql('CREATE TABLE rate (id INT NOT NULL, last_update INT NOT NULL, base VARCHAR(255) NOT NULL, rates JSON NOT NULL, PRIMARY KEY(id))');
-        $this->addSql('DROP TABLE currency_exchange_rates');
     }
 
     public function down(Schema $schema): void
@@ -31,8 +29,6 @@ final class Version20240307202606 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->addSql('CREATE SCHEMA public');
         $this->addSql('DROP SEQUENCE rate_id_seq CASCADE');
-        $this->addSql('CREATE SEQUENCE currency_exchange_rates_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
-        $this->addSql('CREATE TABLE currency_exchange_rates (id INT NOT NULL, last_update INT NOT NULL, base VARCHAR(255) NOT NULL, rates JSON NOT NULL, PRIMARY KEY(id))');
         $this->addSql('DROP TABLE rate');
     }
 }
