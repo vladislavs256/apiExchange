@@ -18,7 +18,6 @@ class RateController extends AbstractController
     public function __construct(
         private readonly RateService $rateService
     ) {
-
     }
 
     #[Route('/rates/{base}', name: 'rates', methods: ['GET'])]
