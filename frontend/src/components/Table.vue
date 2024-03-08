@@ -1,4 +1,5 @@
 <script setup>
+
 defineProps({
   paginatedRates: Array,
   formatDate: Function,

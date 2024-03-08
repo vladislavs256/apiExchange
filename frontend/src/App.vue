@@ -3,14 +3,18 @@ import Table from "@/components/Table.vue";
 import Pagination from "@/components/Pagination.vue";
 import {computed, onBeforeMount, ref} from 'vue';
 import axios from "axios";
+
 const lastUpdatedTime = ref('2024.12.12');
 const rates = ref([]);
-const itemsPerPage = ref(10);
 const currentPage = ref(1);
-const paginationRange = ref(5);
-
-
+const itemsPerPage = ref(10);
 let isAscending = true;
+
+const paginatedRates = computed(() => {
+  const start = (currentPage.value - 1) * itemsPerPage.value;
+  const end = start + itemsPerPage.value;
+  return rates.value.slice(start, end);
+});
 
 const toggleSortOrder = () => {
   isAscending = !isAscending;
@@ -28,6 +32,8 @@ const formatDate = (timestamp) => {
   const day = String(date.getDate()).padStart(2, '0');
   return `${day}.${month}.${year}`;
 };
+
+// can separate to http/main.js
 const fetchRates = async () => {
   try {
     const response = await axios.get('http://127.0.0.1:8080/rates/EUR');
@@ -39,44 +45,7 @@ const fetchRates = async () => {
   }
 };
 
-
 onBeforeMount(fetchRates);
-
-const paginatedRates = computed(() => {
-  const start = (currentPage.value - 1) * itemsPerPage.value;
-  const end = start + itemsPerPage.value;
-  return rates.value.slice(start, end);
-});
-
-const totalPages = computed(() => Math.ceil(rates.value.length / itemsPerPage.value));
-
-const nextPage = () => {
-  if (currentPage.value < totalPages.value) {
-    currentPage.value++;
-  }
-};
-
-const prevPage = () => {
-  if (currentPage.value > 1) {
-    currentPage.value--;
-  }
-};
-
-
-
-const getPageRange = () => {
-  const range = [];
-  const total = totalPages.value;
-  const current = currentPage.value;
-
-  let start = Math.max(current - 1, 2);
-  let end = Math.min(current + 1, total - 1);
-  for (let i = start; i <= end; i++) {
-    range.push(i);
-  }
-
-  return range;
-};
 
 const usdRates = computed(() => {
   return rates.value
@@ -100,8 +69,6 @@ const avgRate = computed(() => {
   const sum = usdRates.value.reduce((acc, rate) => acc + rate, 0);
   return (sum / length).toFixed(4);
 });
-
-
 </script>
 
 <template>
@@ -112,10 +79,9 @@ const avgRate = computed(() => {
     </div>
     <Pagination
         :currentPage="currentPage"
-        :totalPages="totalPages"
-        :getPageRange="getPageRange"
-        :nextPage="nextPage"
-        :prevPage="prevPage"
+        :rates="rates"
+        :itemsPerPage="itemsPerPage"
+        @update:currentPage="currentPage = $event"
     />
     <Table
         :paginatedRates="paginatedRates"
@@ -128,39 +94,12 @@ const avgRate = computed(() => {
     />
     <Pagination
         :currentPage="currentPage"
-        :totalPages="totalPages"
-        :getPageRange="getPageRange"
-        :nextPage="nextPage"
-        :prevPage="prevPage"
+        :rates="rates"
+        :itemsPerPage="itemsPerPage"
     />
-  </div></template>
+  </div>
+</template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-}
-@import '@/assets/main.css';
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
+/* Your scoped styles here */
 </style>

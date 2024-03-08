@@ -10,7 +10,9 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class ConvertController extends AbstractController
 {
-    public function __construct(private readonly AnyApiService $service)
+    public function __construct(
+        private readonly AnyApiService $service
+    )
     {
     }
 
