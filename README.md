@@ -1,6 +1,7 @@
 # apiExchange
 Type in bash
 
+To launch need docker
 ```bash
 make start
 
