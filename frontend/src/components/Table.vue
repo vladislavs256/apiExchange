@@ -13,6 +13,7 @@ defineProps({
 </script>
 
 <template>
+
   <table class="table-auto w-full">
     <thead>
     <tr>
@@ -21,6 +22,7 @@ defineProps({
         <span v-if="isAscending">^</span>
         <span v-else>↓</span>
       </th>
+
       <th class="px-4 py-2">EUR TO USD</th>
     </tr>
     </thead>

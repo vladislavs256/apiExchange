@@ -3,6 +3,7 @@ import Table from "@/components/Table.vue";
 import Pagination from "@/components/Pagination.vue";
 import {computed, onBeforeMount, ref} from 'vue';
 import axios from "axios";
+import {fetchRates} from "@/http/api.js";
 
 const lastUpdatedTime = ref('2024.12.12');
 const rates = ref([]);
@@ -33,19 +34,12 @@ const formatDate = (timestamp) => {
   return `${day}.${month}.${year}`;
 };
 
-// can separate to http/main.js
-const fetchRates = async () => {
-  try {
-    const response = await axios.get('http://127.0.0.1:8080/rates/EUR');
-    rates.value = response.data.items;
-    const maxLastUpdate = Math.max(...rates.value.map(rate => rate.lastUpdate));
-    lastUpdatedTime.value = formatDate(maxLastUpdate);
-  } catch (error) {
-    console.error('There was a problem with the fetch operation:', error);
-  }
-};
 
-onBeforeMount(fetchRates);
+onBeforeMount(() => {
+  fetchRates(selectedCurrency).then(data => {
+    rates.value = data;
+  });
+});
 
 const usdRates = computed(() => {
   return rates.value
@@ -69,12 +63,28 @@ const avgRate = computed(() => {
   const sum = usdRates.value.reduce((acc, rate) => acc + rate, 0);
   return (sum / length).toFixed(4);
 });
+
+
+
+let currencies = ['EUR', 'USD',  'CAD', 'GBP', 'AUD'];
+let selectedCurrency = 'EUR';
+
+function changeCurrency(currency) {
+  selectedCurrency = currency;
+  fetchRates(selectedCurrency).then(data => {
+    rates.value = data;
+  });
+}
 </script>
 
 <template>
   <div class="overflow-x-auto">
-    <div class="flex items-center flex-col ">
-      <h2>1 EUR TO USD Exchange Rate</h2>
+    <div class="flex items-center flex-col">
+      <h2>
+        <select id="currency-selector" @change="changeCurrency($event.target.value)">
+          <option v-for="currency in currencies" :key="currency" :value="currency">{{ currency }}</option>
+        </select> TO USD Exchange Rate
+      </h2>
       <h3 class="ml-5">Last Updated: {{ lastUpdatedTime }}</h3>
     </div>
     <Pagination
