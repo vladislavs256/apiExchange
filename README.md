@@ -56,7 +56,7 @@
 # create a PHP back-end service that captures historical currency exchange rates on a daily basis and presents them in a front-end interface.
 
 ## View of project
-![Screenshot_2](https://github.com/vladislavs256/apiExchange/assets/45405871/dd25ed27-f9a8-40f2-9973-7f771275da53)
+![Screenshot_3](https://github.com/vladislavs256/apiExchange/assets/45405871/90e98ba3-1394-46bc-bae9-21784b0bd3d0)
 
 ## Mandatory Requirements:
 - Back-end service: Symfony or Laravel
