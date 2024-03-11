@@ -67,7 +67,7 @@
   https://anyapi.io/
 - Data should be stored in SQL based database - Stored <B>postgres<B>
 - Data should be refreshed with the most recent EUR to GBP, USD, AUD exchange
-  rates on daily basis = Confirguret cron job
+  rates on daily basis = Configure cron job
 - Front-end interface should allow user to select target currency and output a view as
   illustrated in the mockup file attached (Test Assignment.jpg)
 
@@ -79,7 +79,7 @@
 
 * Symfony
 * Tailwind
-* Vue
+* VueJS
 
 
 
@@ -131,6 +131,7 @@ Frontend running on http://localhost:8081
 <!-- CONTACT -->
 ## Contact
 
+Have commits on other repository if need can provide
 Email - vladislavsKudrins@gmail.com <br>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -139,26 +140,6 @@ Email - vladislavsKudrins@gmail.com <br>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/vladislavs256/SmallTicketSystem.svg?style=for-the-badge
-[contributors-url]: https://github.com/vladislavs256/SmallTicketSystem/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/vladislavs256/SmallTicketSystem.svg?style=for-the-badge
-[forks-url]: https://github.com/vladislavs256/SmallTicketSystem/network/members
-[stars-shield]: https://img.shields.io/github/stars/vladislavs256/SmallTicketSystem.svg?style=for-the-badge
-[stars-url]: https://github.com/vladislavs256/SmallTicketSystem/stargazers
-[issues-shield]: https://img.shields.io/github/issues/vladislavs256/SmallTicketSystem.svg?style=for-the-badge
-[issues-url]: https://github.com/vladislavs256/SmallTicketSystem/issues
-[license-shield]: https://img.shields.io/github/license/vladislavs256/SmallTicketSystem.svg?style=for-the-badge
-[license-url]: https://github.com/vladislavs256/SmallTicketSystem/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/linkedin_username
-[product-screenshot]: images/screenshot.png
-[Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
-[Symfony-url]: https://symfony.com
-[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
-[Bootstrap-url]: https://getbootstrap.com
-[JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-[JQuery-url]: https://jquery.com
-
 
 
 
