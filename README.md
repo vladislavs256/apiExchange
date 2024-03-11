@@ -42,7 +42,6 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
@@ -53,7 +52,7 @@
 ## About The Project
 
 
-# create a PHP back-end service that captures historical currency exchange rates on a daily basis and presents them in a front-end interface.
+# Create a PHP back-end service that captures historical currency exchange rates on a daily basis and presents them in a front-end interface.
 
 ## Mandatory Requirements:
 - Back-end service: Symfony or Laravel

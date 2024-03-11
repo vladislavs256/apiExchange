@@ -10,26 +10,33 @@ class RateFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
+        $currencies = ['USD', 'EUR', 'GBP', 'JPY', 'CAD', 'AUD', 'CHF', 'CNY', 'INR', 'NZD'];
 
-        for ($i = 0; $i < 100; $i++) {
-
-            $timestamp = mt_rand(946684800, time());
-
-            $currencies = ['USD', 'EUR', 'GBP', 'JPY', 'CAD', 'AUD', 'CHF', 'CNY', 'INR', 'NZD'];
-
-            $rates = [];
-            foreach ($currencies as $currency) {
-                $rates[$currency] = mt_rand(1, 1000) / 100;
+        foreach ($currencies as $currency) {
+            for ($i = 0; $i < 100; $i++) {
+                $rate = $this->createRate($currency);
+                $manager->persist($rate);
             }
-
-            $rate = new Rate();
-            $rate->setLastUpdate($timestamp);
-            $rate->setBase('EUR');
-            $rate->setRates($rates);
-
-            $manager->persist($rate);
         }
 
         $manager->flush();
+    }
+
+    private function createRate(string $currency): Rate
+    {
+        $timestamp = mt_rand(946684800, time());
+        $rates = [];
+        $currencies = ['USD', 'EUR', 'GBP', 'JPY', 'CAD', 'AUD', 'CHF', 'CNY', 'INR', 'NZD'];
+
+        foreach ($currencies as $cur) {
+            $rates[$cur] = mt_rand(1, 1000) / 100;
+        }
+
+        $rate = new Rate();
+        $rate->setLastUpdate($timestamp);
+        $rate->setBase($currency);
+        $rate->setRates($rates);
+
+        return $rate;
     }
 }

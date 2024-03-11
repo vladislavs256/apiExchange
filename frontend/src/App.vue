@@ -80,7 +80,7 @@ function changeCurrency(currency) {
 <template>
   <div class="overflow-x-auto">
     <div class="flex items-center flex-col">
-      <h2>
+      <h2>1
         <select id="currency-selector" @change="changeCurrency($event.target.value)">
           <option v-for="currency in currencies" :key="currency" :value="currency">{{ currency }}</option>
         </select> TO USD Exchange Rate
