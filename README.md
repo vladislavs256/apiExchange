@@ -70,6 +70,7 @@
   rates on daily basis = Configure cron job
 - Front-end interface should allow user to select target currency and output a view as
   illustrated in the mockup file attached (Test Assignment.jpg)
+![Test Assignment (1)](https://github.com/vladislavs256/apiExchange/assets/45405871/88ab2d30-a9ff-4313-8577-cfd45a900a83)
 
 
 
